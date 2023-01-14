@@ -1,0 +1,22 @@
+---
+import { projects } from "../../config/projects.json";
+import Button from "./Button.astro";
+---
+
+<h2 class="font-bold text-5xl my-8 text-center">Projets</h2>
+
+{
+  projects.map((project) => (
+    <div class="flex flex-col md:flex-row mb-2 text-center md:text-left">
+      <div class="flex-1 p-4">
+        <h2 class=" font-bold text-2xl my-4">{project.title}</h2>
+        <p class="my-2">{project.description}</p>
+        <Button nombre="More Info"/>
+
+      </div>
+      <div class="flex-1">
+        <img class="w-72" src={project.image} alt="" />
+      </div>
+    </div>
+  ))
+}
